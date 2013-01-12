@@ -1,3 +1,6 @@
 {
-	"content": "index"
+	"content": "index",
+    "partials": {
+      "navigation": "navigation"
+    }
 }
