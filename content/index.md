@@ -80,4 +80,4 @@ felt most comfortable. That means using vim and not a silly Wordpress
 front-end. That means using git and not resorting to an FTP connection. It
 means all the lessons the web development community has learned.
 
-Mostly, it means the site will be in beta forever.
+Mostly, it means the site will be in beta forever, and that Jackie is the bomb dot com.

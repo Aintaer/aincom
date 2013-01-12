@@ -1,0 +1,15 @@
+$body_font: 'Source Sans Pro', sans-serif;
+
+body {
+  font: 18px/24px $body_font;
+  color: #242424;
+}
+
+#content {
+  width: 940px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 36px;
+}
