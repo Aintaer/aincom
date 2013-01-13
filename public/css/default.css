@@ -55,5 +55,5 @@ footer, header, hgroup, menu, nav, section {
   font-family: 'Comic Sans MS';
 }
 .teengirl #content {
-  background-image: url("img/stars.gif");
+  background-image: url("../img/stars.gif");
 }
