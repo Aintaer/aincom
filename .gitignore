@@ -1,4 +1,3 @@
 *.swp
+.sass-cache/
 public/*.html
-
-public/.sass-cache/
