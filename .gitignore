@@ -1,2 +1,4 @@
 *.swp
 public/*.html
+
+public/.sass-cache/
