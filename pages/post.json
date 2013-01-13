@@ -1,1 +1,5 @@
-{}
+{
+  "partials": {
+    "navigation": "navigation"
+  }
+}
