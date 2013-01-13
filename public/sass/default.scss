@@ -1,15 +1,52 @@
 $body_font: 'Source Sans Pro', sans-serif;
 
-body {
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  right: 40px;
+  padding: 3px 7px;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+.cfaydi {
   font: 18px/24px $body_font;
   color: #242424;
-}
 
-#content {
-  width: 940px;
-  margin: auto;
-}
+  #navigation {
+    border-color: #242424;
+  }
 
-h1 {
-  font-size: 36px;
+  #content {
+    margin: auto;
+    margin-top: 80px;
+    width: 940px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
 }
