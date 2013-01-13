@@ -1,3 +1,5 @@
+@import "compass";
+
 $body_font: 'Source Sans Pro', sans-serif;
 
 /* HTML5 display-role reset for older browsers */
@@ -24,7 +26,8 @@ footer, header, hgroup, menu, nav, section {
   li {
     display: inline;
   }
-}
+  
+} // #navigation
 
 .cfaydi {
   font: 18px/24px $body_font;
@@ -37,16 +40,32 @@ footer, header, hgroup, menu, nav, section {
   #content {
     margin: auto;
     margin-top: 80px;
-    width: 940px;
+    max-width: 940px;
+    min-width: 320px;
   }
 
   h1 {
     font-size: 36px;
   }
+  
   h2 {
     font-size: 24px;
   }
+  
   h3 {
     font-size: 18px;
   }
-}
+  
+} // .cfaydi
+
+.teengirl {
+  
+  @include background-image(linear-gradient(top, #ff0000 0%,#ff7f00 14%,#faff00 32%,#10ff00 50%,#1000ff 67%,#8700ff 83%,#de47ac 100%,#e500ff 100%));
+  color: #000;
+  font-family: 'Comic Sans MS';
+  
+  #content {
+    background-image: url('img/stars.gif');
+  }
+  
+} // .teengirl
