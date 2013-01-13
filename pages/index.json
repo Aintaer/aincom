@@ -1,5 +1,9 @@
 {
-	"content": "index",
+	"content": {
+      "list": "post",
+      "truncate": true,
+      "limit": 1
+    },
     "partials": {
       "navigation": "navigation"
     }
