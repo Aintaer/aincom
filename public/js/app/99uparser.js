@@ -5,7 +5,6 @@ require({baseUrl:'js'}, ['jquery', 'nbd/util/pipe'], function($, pipe) {
   $dirty = $('#dirty'),
   $clean = $('#clean');
 
-  cleanup = pipe(
   function firstletter(input) {
     var needle = '</div>',
     ignore = false,
@@ -21,7 +20,9 @@ require({baseUrl:'js'}, ['jquery', 'nbd/util/pipe'], function($, pipe) {
     }
     if (k===input.length) { return input; }
     return input.substring(0,k) + '<span class="dropcap">'+ input[k] + '</span>' + input.substring(k+1);
-  },
+  }
+
+  cleanup = pipe(
 
   function unstrong(input) {
     return input.replace(/(<\/?)strong>/gi, '$1h3>');
@@ -31,17 +32,22 @@ require({baseUrl:'js'}, ['jquery', 'nbd/util/pipe'], function($, pipe) {
     return input.replace(/99%/g, '99U');
   },
 
-  function undiv(input) {
-    return input.replace(/<\/?div>/gi, '');
-  },
-
   function tagswap(input) {
     var $c = $('<div>').append(input);
 
-    $c.find('span.pullquote, span.blockquote').each(function() {
+    $c.find('div').filter(function() {
+      return !this.attributes.length;
+    })
+    .each(function() {
+      var $this = $(this);
+      $this.replaceWith( $this.html() );
+    });
+
+    $c.find('span').each(function() {
       var $this = $(this);
       $this.replaceWith( $('<div>', {'class':this.className}).append($this.html()) );
     });
+
     return $c.html();
   }
   );
