@@ -12,12 +12,11 @@ require({baseUrl:'js'}, ['jquery', 'nbd/util/pipe'], function($, pipe) {
     k = input.indexOf(needle);
 
     if (k<0) { return input; }
-    k += needle.length;
 
-    for(k; k<input.length; ++k) {
-      if (input[k]==='>') { ignore = false; }
+    for(k+=needle.length; k<input.length; ++k) {
+      if (input[k]==='>') { ignore = false; continue; }
+      if (input[k]==='<') { ignore = true; continue; }
       if (ignore) { continue; }
-      if (input[k]==='<') { ignore = true; }
       if (/[a-z]/i.test(input[k])) { break; }
     }
     if (k===input.length) { return input; }
