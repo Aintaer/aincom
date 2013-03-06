@@ -1,5 +1,5 @@
 /*global Typekit */
-require(['jquery'], function($) {
+require({baseUrl:'js'}, ['jquery'], function($) {
   'use strict';
 
   var $html = $('html'),
