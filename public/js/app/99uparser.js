@@ -39,8 +39,9 @@ require({baseUrl:'js'}, ['jquery', 'nbd/util/pipe'], function($, pipe) {
       return !this.attributes.length;
     })
     .each(function() {
-      var $this = $(this);
-      $this.replaceWith( $this.html() );
+      var $this = $(this),
+      inner = $this.html();
+      $this[ inner ? 'replaceWith' : 'remove' ]( inner );
     });
 
     $c.find('span').each(function() {
