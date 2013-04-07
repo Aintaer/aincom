@@ -1,31 +1,34 @@
 {
-  "description": "beta.aintaer.com",
-  "version": "0.0.1",
-  "private": true,
-  "main": "./app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Aintaer/aincom.git"
-  },
-  "dependencies": {
-    "union": "~0.3.5",
-    "flatiron": "~0.3.5",
-    "ecstatic": "~0.4.2",
-	"blacksmith": "git://github.com/Aintaer/blacksmith.git#70726a87b2600a15d4633282c1b304dd121b1676"
-  },
-  "devDependencies": {
-    "api-easy": "0.3.2",
-    "vows": "0.6.x"
-  },
-  "scripts": {
-    "test": "vows --spec",
-    "start": "node app.js"
-  },
-  "name": "aincom",
-  "author": "aintaer",
-  "homepage": "http://beta.aintaer.com",
-  "subdomain": "aincom",
-  "engines": {
-    "node": "0.8.x"
-  }
+	"description": "beta.aintaer.com",
+	"version": "0.0.1-1",
+	"private": true,
+	"main": "./app.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Aintaer/aincom.git"
+	},
+	"dependencies": {
+		"union": "~0.3.5",
+		"flatiron": "~0.3.5",
+		"ecstatic": "~0.4.2",
+		"blacksmith": "git://github.com/Aintaer/blacksmith.git#70726a87b2600a15d4633282c1b304dd121b1676"
+	},
+	"devDependencies": {
+		"api-easy": "0.3.2",
+		"vows": "0.6.x"
+	},
+	"scripts": {
+		"test": "vows --spec",
+		"start": "node app.js"
+	},
+	"name": "aincom",
+	"author": "aintaer",
+	"homepage": "http://beta.aintaer.com",
+	"subdomain": "aincom",
+	"domains": [
+		"beta.aintaer.com"
+	],
+	"engines": {
+		"node": "0.8.x"
+	}
 }
