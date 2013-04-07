@@ -16,13 +16,20 @@ app.config.defaults({
 });
 
 /**
- * Middleware
+ * Plugins
  */
 app.use(flatiron.plugins.http, {
-	// Union routes
+	// Middleware
 	before: [require('./lib/static')],
 	after: []
 });
+
+var blacksmith = {
+	init: function(done) {
+		require('./lib/blacksmith')(__dirname, done);
+	}
+};
+app.use(blacksmith);
 
 /**
  * Routes

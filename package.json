@@ -22,5 +22,9 @@
 	},
 	"name": "aincom",
 	"author": "aintaer",
-	"homepage": "http://beta.aintaer.com"
+	"homepage": "http://beta.aintaer.com",
+	"subdomain": "aincom",
+	"engines": {
+		"node": "0.8.x"
+	}
 }
