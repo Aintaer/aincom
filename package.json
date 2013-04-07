@@ -1,20 +1,26 @@
 {
-  "description": "beta.aintaer.com",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "union": "0.3.5",
-    "flatiron": "0.3.5"
-  },
-  "devDependencies": {
-    "api-easy": "0.3.2",
-    "vows": "0.6.x"
-  },
-  "scripts": {
-    "test": "vows --spec",
-    "start": "node app.js"
-  },
-  "name": "aincom",
-  "author": "aintaer",
-  "homepage": "http://beta.aintaer.com"
+	"description": "beta.aintaer.com",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./app.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Aintaer/aincom.git"
+	},
+	"dependencies": {
+		"union": "~0.3.5",
+		"flatiron": "~0.3.5",
+		"ecstatic": "~0.4.2"
+	},
+	"devDependencies": {
+		"api-easy": "0.3.2",
+		"vows": "0.6.x"
+	},
+	"scripts": {
+		"test": "vows --spec",
+		"start": "node app.js"
+	},
+	"name": "aincom",
+	"author": "aintaer",
+	"homepage": "http://beta.aintaer.com"
 }
