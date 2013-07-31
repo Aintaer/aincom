@@ -8,13 +8,11 @@
 		"description": "Ramblings of an immor(t)al demigod"
 	},
 	"plugins": [
+		"./node_modules/wintersmith-hogan/",
+		"./node_modules/wintersmith-less/",
 		"./plugins/paginator.coffee"
 	],
-	"require": {
-		"moment": "moment",
-		"_": "underscore",
-		"typogr": "typogr"
-	},
+	"require": {},
 	"jade": {
 		"pretty": true
 	},
