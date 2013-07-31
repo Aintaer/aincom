@@ -1,6 +1,7 @@
 var flatiron = require('flatiron'),
     path = require('path'),
-    app = flatiron.app;
+    app = flatiron.app,
+	config = path.join(__dirname, 'config.json');
 
 /**
  * Application configuration
@@ -8,11 +9,11 @@ var flatiron = require('flatiron'),
 
 // First look at conf file
 app.config.file({ 
-	file: path.join(__dirname, 'config', 'config.json')
+	file: config
 });
 // Otherwise, defaults here
 app.config.defaults({
-	root: path.join(__dirname, 'public')
+	output: path.join(__dirname, 'public')
 });
 
 /**
@@ -24,12 +25,12 @@ app.use(flatiron.plugins.http, {
 	after: []
 });
 
-var blacksmith = {
-	init: function(done) {
-		require('./lib/blacksmith')(__dirname, done);
+var wintersmith = {
+	init : function(done) {
+		require('./lib/wintersmith')(config, done);
 	}
 };
-app.use(blacksmith);
+app.use(wintersmith);
 
 /**
  * Routes
