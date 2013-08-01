@@ -1,5 +1,4 @@
 {
-	"views": "./views",
 	"output": "./public",
 	"locals": {
 		"url": "http://localhost:8080",
@@ -9,8 +8,7 @@
 	},
 	"plugins": [
 		"./node_modules/wintersmith-hogan/",
-		"./node_modules/wintersmith-less/",
-		"./plugins/paginator.coffee"
+		"./node_modules/wintersmith-less/"
 	],
 	"require": {},
 	"jade": {
