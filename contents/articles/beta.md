@@ -1,3 +1,9 @@
+---
+title: beta.aintaer.com
+author: aintaer
+template: default.mustache
+---
+
 beta.aintaer.com
 ===
 
@@ -82,5 +88,3 @@ means all the lessons the web development community has learned.
 
 Mostly, it means the site will be in beta forever.
 
-[meta:author]: <> (aintaer)
-[meta:title]: <> (beta.aintaer.com)

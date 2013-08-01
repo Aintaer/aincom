@@ -1,3 +1,9 @@
+---
+title: Foray into asm.js
+author: aintaer
+template: default.mustache
+---
+
 Foray into `asm.js`
 ===
 
@@ -95,7 +101,3 @@ platform as any compiled language, but with the benefit of being distributable
 through the web, sandboxed by the browser, with liberty and justice for all.
 
 (╯°□°)╯︵ ┻━┻
-
-
-[meta:author]: <> (aintaer)
-[meta:title]: <> (Foray into asm.js)
