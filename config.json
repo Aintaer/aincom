@@ -10,6 +10,7 @@
 		"./node_modules/wintersmith-hogan/",
 		"./node_modules/wintersmith-less/"
 	],
+	"ignore": ["**/.*", "**/test", "js/nbd/build", "js/nbd/dist", "js/nbd/docs"],
 	"require": {},
 	"jade": {
 		"pretty": true
