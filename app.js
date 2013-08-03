@@ -40,6 +40,6 @@ app.router.get('/', function () {
 });
 
 // Kickoff
-app.start(8080, function() {
+app.start(process.env.PORT, function() {
 	console.log("Started!");
 });
