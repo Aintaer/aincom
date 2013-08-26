@@ -1,3 +1,3 @@
-[submodule "public/js/nbd"]
-	path = public/js/nbd
+[submodule "contents/js/nbd"]
+	path = contents/js/nbd
 	url = https://github.com/Aintaer/nbd.js.git
