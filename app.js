@@ -1,14 +1,14 @@
 var flatiron = require('flatiron'),
-    path = require('path'),
-    app = flatiron.app,
-	config = path.join(__dirname, 'config.json');
+path = require('path'),
+app = flatiron.app,
+config = path.join(__dirname, 'config.json');
 
 /**
  * Application configuration
  */
 
 // First look at conf file
-app.config.file({ 
+app.config.file({
 	file: config
 });
 // Otherwise, defaults here
@@ -36,7 +36,7 @@ app.use(wintersmith);
  * Routes
  */
 app.router.get('/', function () {
-  this.res.json({ 'oh': 'noes!' });
+	this.res.json({ 'oh': 'noes!' });
 });
 
 // Kickoff
