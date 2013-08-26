@@ -2,15 +2,10 @@
 <html>
 <head>
 	<title>{{page.title}}</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-	<link rel="stylesheet" href="/css/default.css">
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+	{{> head}}
 </head>
-<body class="cfaydi">
+<body>
 	{{> navigation}}
 	{{# page}}{{> article}}{{/page}}
-	<script src="js/app/index.js"></script>
 </body>
 </html>
