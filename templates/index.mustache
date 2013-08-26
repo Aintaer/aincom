@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{page.title}}</title>
+	<title>beta.aintaer.com</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	<link rel="stylesheet" href="/css/default.css">
@@ -10,7 +10,15 @@
 </head>
 <body class="cfaydi">
 	{{> navigation}}
-	{{# page}}{{> article}}{{/page}}
+
+	<aside>
+		{{#prevPage}}<a href="{{url}}">previous</a>{{/prevPage}}
+		{{#nextPage}}<a href="{{url}}">next</a>{{/nextPage}}
+	</aside>
+
+	{{# articles}}
+	<section class="article">{{> index}}</section>
+	{{/ articles}}
 	<script src="js/app/index.js"></script>
 </body>
 </html>

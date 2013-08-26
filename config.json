@@ -7,6 +7,7 @@
 		"description": "Ramblings of an immor(t)al demigod"
 	},
 	"plugins": [
+		"./plugins/paginator.coffee",
 		"./node_modules/wintersmith-hogan/",
 		"./node_modules/wintersmith-less/"
 	],
@@ -20,6 +21,7 @@
 		"smartypants": true
 	},
 	"paginator": {
-		"perPage": 3
+		"perPage": 1,
+		"template": "index.mustache"
 	}
 }
