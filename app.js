@@ -13,7 +13,8 @@ app.config.file({
 });
 // Otherwise, defaults here
 app.config.defaults({
-	output: path.join(__dirname, 'public')
+	output: path.join(__dirname, 'public'),
+	port: process.env.PORT || 8080
 });
 
 /**
@@ -40,6 +41,6 @@ app.router.get('/', function () {
 });
 
 // Kickoff
-app.start(process.env.PORT, function() {
+app.start(app.config.get('port'), function() {
 	console.log("Started!");
 });
