@@ -1,46 +1,48 @@
 var flatiron = require('flatiron'),
 path = require('path'),
 app = flatiron.app,
-config = path.join(__dirname, 'config.json');
+config = path.join(__dirname, 'config.json'),
+
+wintersmith = require('./lib/wintersmith');
 
 /**
  * Application configuration
  */
 
-// First look at conf file
-app.config.file({
+app.config
+.argv()
+.file({
 	file: config
-});
-// Otherwise, defaults here
-app.config.defaults({
+})
+.defaults({
 	output: path.join(__dirname, 'public'),
-	port: process.env.PORT || 8080
+	port: 8080
 });
 
 /**
  * Plugins
  */
 app.use(flatiron.plugins.http, {
-	// Middleware
-	before: [require('./lib/static')],
-	after: []
+	// before: [],
+	// after: [],
+	// route: {}
 });
 
-var wintersmith = {
-	init : function(done) {
-		require('./lib/wintersmith')(config, done);
-	}
-};
-app.use(wintersmith);
+app.use(wintersmith, {file: config});
 
-/**
- * Routes
+/***
+ * Routing
  */
-app.router.get('/', function () {
+app.router.get('/', function() {
 	this.res.json({ 'oh': 'noes!' });
+});
+
+app.router.post('/jitherb', function() {
+	console.log(this.req.body);
+	this.res.json(this.req.body);
 });
 
 // Kickoff
 app.start(app.config.get('port'), function() {
-	console.log("Started!");
+	app.log.info("Application started on port", app.config.get('port'));
 });
