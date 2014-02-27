@@ -8,7 +8,6 @@ wintersmith = require('./lib/wintersmith');
 /**
  * Application configuration
  */
-
 app.config
 .argv()
 .file({
@@ -37,10 +36,7 @@ app.router.get('/', function() {
 	this.res.json({ 'oh': 'noes!' });
 });
 
-app.router.post('/jitherb', function() {
-	console.log(this.req.body);
-	this.res.json(this.req.body);
-});
+app.router.path('/jitherb', require('./lib/update'));
 
 // Kickoff
 app.start(app.config.get('port'), function() {
