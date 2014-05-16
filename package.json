@@ -14,14 +14,13 @@
     "wintersmith": "",
     "wintersmith-hogan": "git://github.com/Aintaer/wintersmith-hogan.git",
     "wintersmith-less": "",
+	"wintersmith-esnext": "^1.0.1",
     "q": "^1.0.0"
   },
   "devDependencies": {
-    "api-easy": "0.3.2",
-    "vows": "0.6.x"
+    "api-easy": "0.3.2"
   },
   "scripts": {
-    "test": "vows --spec",
     "start": "node app.js"
   },
   "name": "aincom",
@@ -30,8 +29,5 @@
   "subdomain": "aincom",
   "domains": [
     "beta.aintaer.com"
-  ],
-  "engines": {
-    "node": "0.8.x"
-  }
+  ]
 }

@@ -9,10 +9,11 @@
 	},
 	"plugins": [
 		"./plugins/paginator.coffee",
-		"./node_modules/wintersmith-hogan/",
-		"./node_modules/wintersmith-less/"
+		"wintersmith-hogan",
+		"wintersmith-less",
+		"wintersmith-esnext"
 	],
-	"ignore": ["**/.*", "**/test", "js/nbd/build", "js/nbd/dist", "js/nbd/docs"],
+	"ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
 	"require": {},
 	"jade": {
 		"pretty": true
@@ -24,5 +25,10 @@
 	"paginator": {
 		"perPage": 1,
 		"template": "index.mustache"
+	},
+	"esnext": {
+		"format": "amd",
+		"anonymous": true,
+		"pattern": "js/app/*.js"
 	}
 }

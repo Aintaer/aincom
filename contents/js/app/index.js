@@ -1,25 +1,21 @@
-/*global Typekit */
-require({baseUrl:'js'}, ['jquery'], function($) {
-  'use strict';
+var html = document.documentElement,
+config = {
+	kitId: 'dtz5muo',
+	scriptTimeout: 3000
+};
 
-  var $html = $('html'),
-  $doc = $(document.body),
-  config = {
-    kitId: 'dtz5muo',
-    scriptTimeout: 3000
-  };
-
-  // Typekit
-  $html.addClass('wf-loading');
-  require(['//use.typekit.net/'+config.kitId+'.js'], function() {
-    try { Typekit.load(config); } catch (tke) {}
-  }, function() {
-    $html.removeClass('wf-loading').addClass('wf-inactive');
-  });
-
-  $('#navigation').on('click', 'li', function() {
-    $doc.removeClass()
-    .addClass( this.className );
-  });
-
+// Typekit
+html.classList.add('wf-loading');
+require([`//use.typekit.net/${config.kitId}.js`], () => {
+	try {
+		Typekit.load(config);
+	} catch (tke) {}
+}, () => {
+	html.classList.remove('wf-loading');
+	html.classList.add('wf-inactive')
 });
+
+document.querySelectorAll('nav li')
+.forEach(li => li.addEventListener('click', function() {
+	document.body.className = this.className;
+}));

@@ -24,7 +24,6 @@ app.config
 app.use(flatiron.plugins.http, {
 	// before: [],
 	// after: [],
-	// route: {}
 });
 
 app.use(wintersmith, {file: config});
@@ -33,7 +32,10 @@ app.use(wintersmith, {file: config});
  * Routing
  */
 app.router.get('/', function() {
-	this.res.json({ 'oh': 'noes!' });
+	this.res.writeHead(200, {
+		'Content-Type': 'application/json; charset=utf8'
+	});
+	this.res.end(JSON.stringify({ 'ヽ(・_・)ノ': 'what?' }));
 });
 
 app.router.path('/jitherb', require('./lib/update'));
