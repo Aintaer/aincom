@@ -6,6 +6,7 @@
 </head>
 <body>
 	{{> navigation}}
+	{{> header}}
 
 	<aside>
 		{{#prevPage}}<a href="{{url}}">previous</a>{{/prevPage}}
@@ -13,5 +14,6 @@
 	</aside>
 
 	{{# articles}}<article>{{> index}}</article>{{/ articles}}
+	{{> footer}}
 </body>
 </html>
