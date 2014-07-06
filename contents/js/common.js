@@ -1,1 +1,6 @@
-require(['app/index']);
+require.config({
+	deps: [
+		'app/bootstrap',
+		'app/index'
+	]
+});
