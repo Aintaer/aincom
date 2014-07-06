@@ -1,7 +1,6 @@
 @import "util";
 @import "prefixer";
 
-@body_font: 'Source Sans Pro', sans-serif;
 @base: #d0d0d0;
 @back: #181818;
 @highlight: #830300;
@@ -55,7 +54,7 @@ header {
 	.gradient(#555, #777, #999);
 	.inner-shadow(-1px -4px 10px #666);
 
-	@theta: 9deg;
+	@theta: 8deg;
 	.transform(rotate(@theta) skew(@theta) scale(1.1));
 	.rounded(6px);
 
@@ -91,7 +90,7 @@ a {
 	}
 	&:hover {
 		color: lighten(@highlight, 50%);
-		background-color: fadeout(contrast(@highlight), 80%);
+		background-color: fade(contrast(@highlight), 20%);
 	}
 	&:visited {
 		color: lighten(@highlight, 30%);
@@ -100,7 +99,36 @@ a {
 
 code {
 	color: @highlight;
-	background-color: ghostwhite;
+	background-color: fadeout(ghostwhite, 10%);
 	border: 1px solid lightgray;
 	.rounded;
+}
+
+.quicknav {
+	.vertical-align;
+	.border-box;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	padding: 0 2%;
+
+	a {
+		@size: 2em;
+		.clearfix;
+		.circle(@size/2);
+		font-size: @size;
+		text-decoration: none;
+		color: @back;
+		background-color: fade(@base, 20%);
+
+		&:hover {
+			background-color: @base;
+		}
+		&.left {
+			float:left;
+		}
+		&.right {
+			float:right;
+		}
+	}
 }

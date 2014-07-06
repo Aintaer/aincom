@@ -1,3 +1,5 @@
+@import "prefixer";
+
 .clearfix {
 	display: block;
 	zoom: 1;
@@ -17,6 +19,18 @@
 	border-radius: @radius;
 	padding-left: @pad;
 	padding-right: @pad;
+}
+
+.circle(@radius: 100px) {
+	border-radius: 50%;
+	width: @radius;
+	height: @radius;
+}
+
+.vertical-align(@pos: 50%) {
+	position: relative;
+	top: @pos;
+	.transform(translateY(-@pos));
 }
 
 h1 {

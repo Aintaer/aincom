@@ -8,9 +8,9 @@
 	{{> navigation}}
 	{{> header}}
 
-	<aside>
-		{{#prevPage}}<a href="{{url}}">previous</a>{{/prevPage}}
-		{{#nextPage}}<a href="{{url}}">next</a>{{/nextPage}}
+	<aside class="quicknav">
+		{{#prevPage}}<a href="{{url}}" class="left icon-arrow-left5"></a>{{/prevPage}}
+		{{#nextPage}}<a href="{{url}}" class="right icon-arrow-right5"></a>{{/nextPage}}
 	</aside>
 
 	{{# articles}}<article>{{> index}}</article>{{/ articles}}
