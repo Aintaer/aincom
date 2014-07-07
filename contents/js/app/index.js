@@ -15,4 +15,4 @@ document.querySelectorAll('nav li')
 import async from 'nbd/util/async';
 
 nav.appendChild(underscore);
-async(() => positionUnderscore.call(nav.querySelector('.ident')));
+async(positionUnderscore.bind(nav.querySelector('.ident')));
