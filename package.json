@@ -14,7 +14,7 @@
     "wintersmith": "",
     "wintersmith-hogan": "git://github.com/Aintaer/wintersmith-hogan.git",
     "wintersmith-less": "",
-	"wintersmith-esnext": "^1.0.1",
+	"wintersmith-esnext": "^1.0.2",
     "q": "^1.0.0"
   },
   "devDependencies": {
