@@ -19,6 +19,8 @@
 		"metalsmith-metadata": {
 			"authors": "./metadata/authors.json"
 		},
-		"./lib/es6": {}
+		"./plugins/es6": {
+			"ignore": "js/*.js"
+		}
 	}
 }

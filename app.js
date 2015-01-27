@@ -3,7 +3,7 @@ path = require('path'),
 app = flatiron.app,
 config = path.join(__dirname, 'config.json');
 
-wintersmith = require('./lib/metalsmith');
+var metalsmith = require('./lib/metalsmith');
 
 /**
  * Application configuration
@@ -18,6 +18,8 @@ app.config
 	output: path.join(__dirname, 'public'),
 	port: 8080
 });
+
+app.config.set('cwd', __dirname);
 
 /**
  * Plugins

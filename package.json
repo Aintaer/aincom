@@ -8,9 +8,11 @@
     "url": "git://github.com/Aintaer/aincom.git"
   },
   "dependencies": {
+    "6to5": "^2.13.7",
     "ecstatic": "^0.5.8",
     "flatiron": "^0.4.3",
     "metalsmith": "^1.1.1",
+    "minimatch": "^2.0.1",
     "q": "^1.1.2",
     "union": "^0.4.4"
   },
