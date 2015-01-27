@@ -11,13 +11,17 @@
 	"plugins": {
 		"metalsmith-date-in-filename": { "override": false },
 		"metalsmith-ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
-		"metalsmith-less": {},
+		"metalsmith-less": {
+			"parse": {
+				"paths": ["contents/css/"]
+			}
+		},
 		"metalsmith-markdown": {
 			"smartypants": true,
 			"gfm": true
 		},
 		"metalsmith-metadata": {
-			"authors": "./metadata/authors.json"
+			"authors": "metadata/authors.json"
 		},
 		"./plugins/es6": {
 			"ignore": ["js/*.js", "js/nbd/**"]

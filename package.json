@@ -12,6 +12,10 @@
     "ecstatic": "^0.5.8",
     "flatiron": "^0.4.3",
     "metalsmith": "^1.1.1",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-less": "^1.0.3",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-metadata": "0.0.1",
     "minimatch": "^2.0.1",
     "q": "^1.1.2",
     "union": "^0.4.4"
