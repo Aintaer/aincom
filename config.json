@@ -20,7 +20,7 @@
 			"authors": "./metadata/authors.json"
 		},
 		"./plugins/es6": {
-			"ignore": "js/*.js"
+			"ignore": ["js/*.js", "js/nbd/**"]
 		}
 	}
 }
