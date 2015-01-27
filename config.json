@@ -1,34 +1,14 @@
 {
+	"source": "./contents",
 	"output": "./public",
 	"port": 5401,
 	"locals": {
-		"url": "http://beta.aintaer.com",
+		"url": "http://aintaer.com",
 		"name": "Aincom",
 		"owner": "Aintaer",
 		"description": "Tautologies are Tautological"
 	},
-	"plugins": [
-		"./plugins/paginator.coffee",
-		"wintersmith-hogan",
-		"wintersmith-less",
-		"wintersmith-esnext"
-	],
+	"plugins": {},
 	"ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
-	"require": {},
-	"jade": {
-		"pretty": true
-	},
-	"markdown": {
-		"smartLists": true,
-		"smartypants": true
-	},
-	"paginator": {
-		"perPage": 1,
-		"template": "index.mustache"
-	},
-	"esnext": {
-		"format": "amd",
-		"anonymous": true,
-		"pattern": "js/app/*.js"
-	}
+	"require": {}
 }

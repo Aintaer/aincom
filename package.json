@@ -1,6 +1,6 @@
 {
   "description": "beta.aintaer.com",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "main": "./app.js",
   "repository": {
@@ -10,6 +10,7 @@
   "dependencies": {
     "ecstatic": "^0.5.8",
     "flatiron": "^0.4.3",
+    "metalsmith": "^1.1.1",
     "q": "^1.1.2",
     "union": "^0.4.4"
   },

@@ -1,9 +1,9 @@
 var flatiron = require('flatiron'),
 path = require('path'),
 app = flatiron.app,
-config = path.join(__dirname, 'config.json'),
+config = path.join(__dirname, 'config.json');
 
-wintersmith = require('./lib/wintersmith');
+wintersmith = require('./lib/metalsmith');
 
 /**
  * Application configuration
@@ -14,6 +14,7 @@ app.config
 	file: config
 })
 .defaults({
+	plugins: {},
 	output: path.join(__dirname, 'public'),
 	port: 8080
 });
@@ -26,7 +27,7 @@ app.use(flatiron.plugins.http, {
 	// after: [],
 });
 
-app.use(wintersmith, {file: config});
+app.use(metalsmith);
 
 /***
  * Routing
