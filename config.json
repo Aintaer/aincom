@@ -8,7 +8,17 @@
 		"owner": "Aintaer",
 		"description": "Tautologies are Tautological"
 	},
-	"plugins": {},
-	"ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
-	"require": {}
+	"plugins": {
+		"metalsmith-date-in-filename": { "override": false },
+		"metalsmith-ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
+		"metalsmith-less": {},
+		"metalsmith-markdown": {
+			"smartypants": true,
+			"gfm": true
+		},
+		"metalsmith-metadata": {
+			"authors": "./metadata/authors.json"
+		},
+		"./lib/es6": {}
+	}
 }
