@@ -4,7 +4,7 @@
 	"port": 5401,
 	"locals": {
 		"url": "http://aintaer.com",
-		"name": "Aincom",
+		"title": "Aincom",
 		"owner": "Aintaer",
 		"description": "Tautologies are Tautological"
 	},
@@ -23,8 +23,21 @@
 		"metalsmith-metadata": {
 			"authors": "metadata/authors.json"
 		},
+		"metalsmith-templates": {
+			"engine": "handlebars",
+			"default": "default.mustache",
+			"directory": "templates",
+			"pattern": "articles/*",
+			"partials": {
+				"head": "partials/head",
+				"header": "partials/header",
+				"navigation": "partials/navigation",
+				"footer": "partials/footer"
+			}
+		},
 		"./plugins/es6": {
-			"ignore": ["js/*.js", "js/nbd/**"]
+			"ignore": ["js/*.js", "js/nbd/**"],
+			"modules": "amd"
 		}
 	}
 }

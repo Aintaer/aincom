@@ -24,12 +24,8 @@ app.config.set('cwd', __dirname);
 /**
  * Plugins
  */
-app.use(flatiron.plugins.http, {
-	// before: [],
-	// after: [],
-});
-
 app.use(metalsmith);
+app.use(flatiron.plugins.http);
 
 /***
  * Routing
