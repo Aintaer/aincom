@@ -11,8 +11,8 @@ function plugin(options) {
 		[options.ignore];
 
 	ignores = ignores.filter(Boolean).map(function(glob) {
-	   	return minimatch.filter(glob);
-   	});
+		return minimatch.filter(glob);
+	});
 
 	return function(files, metalsmith, done) {
 		for (var name in files) {

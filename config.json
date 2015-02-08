@@ -9,11 +9,18 @@
 		"description": "Tautologies are Tautological"
 	},
 	"plugins": {
-		"metalsmith-date-in-filename": { "override": false },
+		"./plugins/date": {},
 		"metalsmith-ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
 		"metalsmith-less": {
 			"parse": {
 				"paths": ["contents/css/"]
+			}
+		},
+		"metalsmith-collections": {
+			"articles": {
+				"pattern": "articles/*.md",
+				"sortBy": "date",
+				"reverse": true
 			}
 		},
 		"metalsmith-markdown": {
