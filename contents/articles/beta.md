@@ -1,8 +1,6 @@
 ---
 title: beta.aintaer.com
 author: aintaer
-date: 2013-01-13 00:38:13
-template: default.mustache
 ---
 
 beta.aintaer.com

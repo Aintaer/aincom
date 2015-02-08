@@ -1,8 +1,6 @@
 ---
 title: Foray into asm.js
 author: aintaer
-date: 2013-04-06 23:34:45
-template: default.mustache
 ---
 
 Foray into `asm.js`
