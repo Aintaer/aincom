@@ -21,6 +21,9 @@
 				"reverse": true
 			}
 		},
+		"metalsmith-paginate": {
+			"perPage": 10
+		},
 		"metalsmith-markdown": {
 			"smartypants": true,
 			"gfm": true
@@ -37,7 +40,6 @@
 				"footer": "partials/footer"
 			}
 		},
-		"./plugins/index": true,
 		"metalsmith-less": {
 			"parse": {
 				"paths": ["contents/css/"]
