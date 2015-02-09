@@ -9,12 +9,10 @@
 		"description": "Tautologies are Tautological"
 	},
 	"plugins": {
-		"./plugins/date": {},
 		"metalsmith-ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
-		"metalsmith-less": {
-			"parse": {
-				"paths": ["contents/css/"]
-			}
+		"./plugins/gitmeta": {},
+		"metalsmith-metadata": {
+			"authors": "metadata/authors.json"
 		},
 		"metalsmith-collections": {
 			"articles": {
@@ -27,19 +25,22 @@
 			"smartypants": true,
 			"gfm": true
 		},
-		"metalsmith-metadata": {
-			"authors": "metadata/authors.json"
-		},
 		"metalsmith-templates": {
 			"engine": "handlebars",
 			"default": "default.mustache",
 			"directory": "templates",
-			"pattern": "articles/*",
+			"pattern": "**/*.html",
 			"partials": {
 				"head": "partials/head",
 				"header": "partials/header",
 				"navigation": "partials/navigation",
 				"footer": "partials/footer"
+			}
+		},
+		"./plugins/index": true,
+		"metalsmith-less": {
+			"parse": {
+				"paths": ["contents/css/"]
 			}
 		},
 		"./plugins/es6": {

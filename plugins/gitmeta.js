@@ -14,8 +14,8 @@ function plugin(options) {
 			if (!minimatch(name, options.pattern)) return;
 			var filename = path.join(src, name);
 			filename = path.relative(metalsmith.directory(), filename);
-			var command = 'git log --format="format:%aI" --diff-filter=A -- ' + filename;
-			return run(command).then(convert).then(setDate.bind(files, name));
+			var command = 'git log --format="format:%ae%n%aI" --diff-filter=A -- ' + filename;
+			return run(command).then(convert).then(setMeta.bind(files, name));
 		}).filter(Boolean))
 		.then(function() {
 			done();
@@ -24,8 +24,13 @@ function plugin(options) {
 }
 
 function convert(stdout) {
-	return new Date(stdout[0]);
+	var out = stdout[0].split('\n');
+	return {
+		email: out[0],
+		date: new Date(out[1])
+	};
 }
-function setDate(name, date) {
-	this[name].date = date;
+function setMeta(name, meta) {
+	this[name].date = meta.date;
+	this[name].email = meta.email;
 }
