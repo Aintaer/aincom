@@ -1,8 +1,3 @@
----
-title: Foray into asm.js
-author: aintaer
----
-
 Foray into `asm.js`
 ===
 

@@ -6,7 +6,6 @@
 </head>
 <body>
 	{{> navigation}}
-	{{> header}}
 
 	{{#pagination}}
 	<aside class="quicknav">
@@ -18,7 +17,7 @@
 	{{{contents}}}
 
 	{{# articles}}
-	<article>{{{contents}}}</article>
+	<section>{{{excerpt}}}</section>
 	{{/ articles}}
 	{{> footer}}
 </body>

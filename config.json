@@ -28,6 +28,7 @@
 			"smartypants": true,
 			"gfm": true
 		},
+		"./plugins/guillotine": true,
 		"metalsmith-templates": {
 			"engine": "handlebars",
 			"default": "default.mustache",

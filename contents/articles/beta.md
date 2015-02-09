@@ -1,8 +1,3 @@
----
-title: beta.aintaer.com
-author: aintaer
----
-
 beta.aintaer.com
 ===
 
