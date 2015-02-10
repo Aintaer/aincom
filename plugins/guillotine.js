@@ -9,6 +9,7 @@ function plugin(options) {
 			var colName = files[file].paginate,
 			collection;
 
+			files[file].filename = file;
 			if (colName && (collection = collections[colName])) {
 				collection.forEach(extract);
 			}

@@ -1,8 +1,8 @@
 @import "util";
 @import "prefixer";
 
-@base: #d0d0d0;
-@back: #181818;
+@base: #303030;
+@back: #d0d0d0;
 @highlight: #830300;
 
 body {
@@ -10,11 +10,6 @@ body {
 	color: @base;
 	padding: 0 4%;
 	margin: 0;
-
-	background-image: url("../img/binding_dark.png");
-	@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-		background-image: url("../img/binding_dark_@2X.png");
-	}
 }
 
 nav {
@@ -50,68 +45,47 @@ nav {
 
 	.underscore {
 		position: absolute;
-		bottom: -1px;
+		bottom: 0px;
 		border-bottom: 1px solid lighten(@highlight, 20%);
 		.transition(all 200ms);
 	}
 }
 
-header {
-	position: absolute;
-	top: 60px;
-	right: 50px;
-
-	color: white;
-	.gradient(#555, #777, #999);
-	.inner-shadow(-1px -4px 10px #666);
-
-	@theta: 8deg;
-	.transform(rotate(@theta) skew(@theta) scale(1.1));
-	.rounded(6px);
-
-	&:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 3px;
-		right: 4px;
-
-		@size: 2.1ex;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 @size @size 0;
-		border-color: transparent fade(white, 30%) transparent transparent;
-	}
-}
-
-article, section {
-	margin: 80px auto;
+article {
+	margin: 50px auto 10px;
 	max-width: 940px;
 	min-width: 320px;
-	background-color: fade(white, 10%);
-	.rounded;
-	padding: 8px 3ch;
+	//background-color: fade(white, 10%);
+	padding: 1ch 3ch 3ch;
+	border: 1px solid transparent;
+	.transition(border-color 200ms);
+
+	&:hover {
+		border: 1px solid fade(@back, 60%);
+	}
 }
 
 a {
-	color: lighten(@highlight, 40%);
+	color: lighten(@highlight, 10%);
+	text-decoration: none;
+	&:link {
+		.transition(color 100ms);
+	}
 	&:active {
 		color: @highlight;
 	}
-	&:hover {
-		color: lighten(@highlight, 50%);
-		background-color: fade(contrast(@highlight), 20%);
-	}
 	&:visited {
-		color: lighten(@highlight, 30%);
+		color: darken(@highlight, 4%);
+	}
+	&:hover {
+		color: lighten(@highlight, 20%);
+		background-color: fade(contrast(@highlight), 20%);
 	}
 }
 
 code {
 	color: @highlight;
 	background-color: fadeout(ghostwhite, 10%);
-	.rounded;
 }
 
 .quicknav {
@@ -124,12 +98,13 @@ code {
 
 	a {
 		@size: 2em;
+		@background: fade(@base, 20%);
 		.clearfix;
 		.circle(@size/2);
 		font-size: @size;
 		text-decoration: none;
-		color: @back;
-		background-color: fade(@base, 20%);
+		color: contrast(@background, @base, @back);
+		background-color: @background;
 
 		&:hover {
 			background-color: @base;

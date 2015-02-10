@@ -3,6 +3,7 @@
 <head>
 	<title>beta.aintaer.com</title>
 	{{> head}}
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 	{{> navigation}}
@@ -17,7 +18,10 @@
 	{{{contents}}}
 
 	{{# articles}}
-	<section>{{{excerpt}}}</section>
+	<article>
+		<h1 data-date="{{dateFormat date}}"><a href="/{{filename}}">{{title}}</a></h1>
+		<section>{{{excerpt}}}</section>
+	</article>
 	{{/ articles}}
 	{{> footer}}
 </body>
