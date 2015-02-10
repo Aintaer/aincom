@@ -1,6 +1,6 @@
 {
 	"source": "./contents",
-	"output": "./public",
+	"output": "/srv/http/html",
 	"port": 5401,
 	"locals": {
 		"url": "http://aintaer.com",
@@ -33,13 +33,7 @@
 			"engine": "handlebars",
 			"default": "default.mustache",
 			"directory": "templates",
-			"pattern": "**/*.html",
-			"partials": {
-				"head": "partials/head",
-				"header": "partials/header",
-				"navigation": "partials/navigation",
-				"footer": "partials/footer"
-			}
+			"pattern": "**/*.html"
 		},
 		"metalsmith-less": {
 			"parse": {
@@ -50,5 +44,6 @@
 			"ignore": ["js/*.js", "js/nbd/**"],
 			"modules": "amd"
 		}
-	}
+	},
+	"partials": "templates/partials"
 }

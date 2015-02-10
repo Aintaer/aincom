@@ -22,11 +22,13 @@
     "metalsmith-paginate": "^0.3.0",
     "metalsmith-templates": "^0.6.0",
     "minimatch": "^2.0.1",
+    "nbd": "^1.0.11",
     "q": "^1.1.2",
     "union": "^0.4.4"
   },
   "devDependencies": {
-    "api-easy": "0.3.2"
+    "api-easy": "0.3.2",
+    "sane": "^1.0.1"
   },
   "scripts": {
     "start": "node app.js"
