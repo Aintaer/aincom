@@ -31,6 +31,6 @@ function convert(stdout) {
 	};
 }
 function setMeta(name, meta) {
-	this[name].date = meta.date;
-	this[name].email = meta.email;
+	this[name].date = this[name].date || meta.date;
+	this[name].email = this[name].email || meta.email;
 }
