@@ -1,6 +1,6 @@
 {
   "description": "beta.aintaer.com",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "main": "./app.js",
   "repository": {
@@ -8,17 +8,28 @@
     "url": "git://github.com/Aintaer/aincom.git"
   },
   "dependencies": {
-    "union": "~0.3.5",
-    "flatiron": "~0.3.5",
-    "ecstatic": "~0.4.2",
-    "wintersmith": "",
-    "wintersmith-hogan": "git://github.com/Aintaer/wintersmith-hogan.git",
-    "wintersmith-less": "",
-	"wintersmith-esnext": "^1.0.2",
-    "q": "^1.0.0"
+    "6to5": "^3.0.0",
+    "cheerio": "^0.18.0",
+    "ecstatic": "^0.5.8",
+    "flatiron": "^0.4.3",
+    "handlebars": "^2.0.0",
+    "metalsmith": "^1.1.1",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-less": "^1.0.3",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-metadata": "0.0.1",
+    "metalsmith-paginate": "^0.3.0",
+    "metalsmith-templates": "^0.6.0",
+    "minimatch": "^2.0.1",
+    "moment": "^2.9.0",
+    "nbd": "^1.0.11",
+    "q": "^1.1.2",
+    "union": "^0.4.4"
   },
   "devDependencies": {
-    "api-easy": "0.3.2"
+    "api-easy": "0.3.2",
+    "sane": "^1.0.1"
   },
   "scripts": {
     "start": "node app.js"

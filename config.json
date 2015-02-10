@@ -1,34 +1,49 @@
 {
+	"source": "./contents",
 	"output": "./public",
 	"port": 5401,
 	"locals": {
-		"url": "http://beta.aintaer.com",
-		"name": "Aincom",
+		"url": "http://aintaer.com",
+		"title": "Aincom",
 		"owner": "Aintaer",
 		"description": "Tautologies are Tautological"
 	},
-	"plugins": [
-		"./plugins/paginator.coffee",
-		"wintersmith-hogan",
-		"wintersmith-less",
-		"wintersmith-esnext"
-	],
-	"ignore": ["**/.*", "**/test", "js/nbd/dist", "js/nbd/docs"],
-	"require": {},
-	"jade": {
-		"pretty": true
+	"plugins": {
+		"metalsmith-ignore": ["**/.*", "**/test/**", "js/nbd/dist/*", "js/nbd/docs/**"],
+		"./plugins/gitmeta": {},
+		"metalsmith-metadata": {
+			"authors": "metadata/authors.json"
+		},
+		"metalsmith-collections": {
+			"articles": {
+				"pattern": "articles/*.md",
+				"sortBy": "date",
+				"reverse": true
+			}
+		},
+		"metalsmith-paginate": {
+			"perPage": 10
+		},
+		"metalsmith-markdown": {
+			"smartypants": true,
+			"gfm": true
+		},
+		"./plugins/guillotine": true,
+		"metalsmith-templates": {
+			"engine": "handlebars",
+			"default": "default.mustache",
+			"directory": "templates",
+			"pattern": "**/*.html"
+		},
+		"metalsmith-less": {
+			"parse": {
+				"paths": ["contents/css/"]
+			}
+		},
+		"./plugins/es6": {
+			"ignore": ["js/*.js", "js/nbd/**"],
+			"modules": "amd"
+		}
 	},
-	"markdown": {
-		"smartLists": true,
-		"smartypants": true
-	},
-	"paginator": {
-		"perPage": 1,
-		"template": "index.mustache"
-	},
-	"esnext": {
-		"format": "amd",
-		"anonymous": true,
-		"pattern": "js/app/*.js"
-	}
+	"partials": "templates/partials"
 }

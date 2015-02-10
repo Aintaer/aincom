@@ -1,0 +1,21 @@
+@import "prefixer";
+
+article {
+	h1::after {
+		content: attr(data-date);
+		margin-left: 1ch;
+		font-size: 20px;
+		opacity: 0;
+		.transition(opacity 200ms);
+	}
+	h1:hover::after {
+		opacity: 0.8;
+	}
+
+	section::before {
+		content: open-quote;
+	}
+	section::after {
+		content: close-quote;
+	}
+}

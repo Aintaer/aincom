@@ -3,17 +3,26 @@
 <head>
 	<title>beta.aintaer.com</title>
 	{{> head}}
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 	{{> navigation}}
-	{{> header}}
 
+	{{#pagination}}
 	<aside class="quicknav">
-		{{#prevPage}}<a href="{{url}}" class="left icon-arrow-left5"></a>{{/prevPage}}
-		{{#nextPage}}<a href="{{url}}" class="right icon-arrow-right5"></a>{{/nextPage}}
+		{{#prev}}<a href="{{path}}" class="left icon-arrow-left5"></a>{{/prev}}
+		{{#next}}<a href="{{path}}" class="right icon-arrow-right5"></a>{{/next}}
 	</aside>
+	{{/pagination}}
 
-	{{# articles}}<article>{{> index}}</article>{{/ articles}}
+	{{{contents}}}
+
+	{{# articles}}
+	<article>
+		<h1 data-date="{{dateFormat date}}"><a href="/{{filename}}">{{title}}</a></h1>
+		<section>{{{excerpt}}}</section>
+	</article>
+	{{/ articles}}
 	{{> footer}}
 </body>
 </html>

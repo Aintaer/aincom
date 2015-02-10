@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{page.title}}</title>
+	<title>{{title}}</title>
 	{{> head}}
 </head>
 <body>
 	{{> navigation}}
-	{{# page}}{{> article}}{{/page}}
+	<article class="content">{{{contents}}}</article>
 </body>
 </html>
