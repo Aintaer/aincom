@@ -14,7 +14,7 @@ function plugin(options) {
 			if (!minimatch(name, options.pattern)) return;
 			var filename = path.join(src, name);
 			filename = path.relative(metalsmith.directory(), filename);
-			var command = 'git log --format="format:%ae%n%aI" --diff-filter=A -- ' + filename;
+			var command = 'git log --format="format:%ae%n%aD" --diff-filter=A -- ' + filename;
 			return run(command).then(convert).then(setMeta.bind(files, name));
 		}).filter(Boolean))
 		.then(function() {
