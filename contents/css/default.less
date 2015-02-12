@@ -1,15 +1,17 @@
 @import "util";
 @import "prefixer";
-
-@base: #303030;
-@back: #d0d0d0;
-@highlight: #830300;
+@import "simplegrid";
+@import "variables";
 
 body {
 	font: 18px/24px sans-serif;
 	color: @base;
 	padding: 0 4%;
-	margin: 0;
+	margin: 40px 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 1em 0;
 }
 
 nav {
@@ -51,18 +53,12 @@ nav {
 	}
 }
 
-article {
-	margin: 50px auto 10px;
-	max-width: 940px;
-	min-width: 320px;
-	//background-color: fade(white, 10%);
-	padding: 1ch 3ch 3ch;
-	border: 1px solid transparent;
-	.transition(border-color 200ms);
+main {
+	.grid
+}
 
-	&:hover {
-		border: 1px solid fade(@back, 60%);
-	}
+article {
+	padding: 1ch 3ch 3ch;
 }
 
 a {

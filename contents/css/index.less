@@ -1,15 +1,29 @@
 @import "prefixer";
+@import "variables";
 
 article {
-	h1::after {
-		content: attr(data-date);
-		margin-left: 1ch;
-		font-size: 20px;
-		opacity: 0;
-		.transition(opacity 200ms);
+	margin: 10px auto;
+
+	.transition(border-color 200ms);
+	border: 1px solid transparent;
+	&:hover {
+		border: 1px solid fade(@back, 60%);
 	}
-	h1:hover::after {
-		opacity: 0.8;
+
+	.heading {
+		&[data-date] {
+			margin-bottom: 0;
+		}
+		&::after {
+			content: attr(data-date);
+			display: block;
+			font-size: 16px;
+			opacity: 0;
+			.transition(opacity 200ms);
+		}
+		&:hover::after {
+			opacity: 0.8;
+		}
 	}
 
 	section::before {

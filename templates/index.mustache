@@ -17,12 +17,17 @@
 
 	{{{contents}}}
 
+	<main class="grid-pad">
 	{{# articles}}
-	<article>
-		<h1 data-date="{{dateFormat date}}"><a href="/{{filename}}">{{title}}</a></h1>
+	<article class="col-1-3">
+		<h4 class="heading" data-date="{{dateFormat date}}">
+			<a href="/{{filename}}">{{title}}</a>
+		</h4>
 		<section>{{{excerpt}}}</section>
 	</article>
 	{{/ articles}}
+	</main>
+
 	{{> footer}}
 </body>
 </html>
