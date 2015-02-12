@@ -9,7 +9,7 @@ var positionUnderscore = function() {
 	underscore.style.width = `${width}px`;
 };
 
-document.querySelectorAll('nav .ident')
+document.querySelectorAll('nav li')
 .forEach(li => li.addEventListener('click', positionUnderscore));
 
 import async from 'nbd/util/async';
@@ -17,6 +17,9 @@ import async from 'nbd/util/async';
 nav.appendChild(underscore);
 async(positionUnderscore.bind(nav.querySelector('.ident')));
 
-import hljs from 'hljs';
-document.querySelectorAll('pre code')
-.forEach(block => hljs.highlightBlock(block));
+let codeblocks = document.querySelectorAll('pre code');
+if (codeblocks.length) {
+	require(['hljs'], function(hljs) {
+		codeblocks.forEach(block => hljs.highlightBlock(block));
+	});
+}
