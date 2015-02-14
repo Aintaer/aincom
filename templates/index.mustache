@@ -19,8 +19,8 @@
 
 	<main class="grid-pad">
 	{{# articles}}
-	<article class="col-1-3">
-		<h4 class="heading" data-date="{{dateFormat date}}">
+	<article class="col-1-3" data-date="{{dateFormat date format='x'}}">
+		<h4 class="heading">
 			<a href="/{{filename}}">{{title}}</a>
 		</h4>
 		<section>{{{excerpt}}}</section>

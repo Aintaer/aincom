@@ -9,8 +9,9 @@ var positionUnderscore = function() {
 	underscore.style.width = `${width}px`;
 };
 
-document.querySelectorAll('nav li')
-.forEach(li => li.addEventListener('click', positionUnderscore));
+for (let li of document.querySelectorAll('nav li')) {
+	li.addEventListener('click', positionUnderscore);
+}
 
 import async from 'nbd/util/async';
 
@@ -20,6 +21,15 @@ async(positionUnderscore.bind(nav.querySelector('.ident')));
 let codeblocks = document.querySelectorAll('pre code');
 if (codeblocks.length) {
 	require(['hljs'], function(hljs) {
-		codeblocks.forEach(block => hljs.highlightBlock(block));
+		for (let block of codeblocks) {
+			hljs.highlightBlock(block);
+		}
 	});
+}
+
+import moment from 'moment';
+
+for (let article of document.querySelectorAll('article')) {
+	let date = moment(+article.dataset.date);
+	article.querySelector('h1, h2, h3, h4, h5, h6').setAttribute('data-date', date.calendar());
 }
