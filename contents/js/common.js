@@ -3,7 +3,8 @@ require.config({
 	deps: ['app/index'],
 	paths: {
 		typekit: "//use.typekit.net/dtz5muo",
-		hljs: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min"
+		hljs: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min",
+		moment: "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min"
 	}
 });
 
