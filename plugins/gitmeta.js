@@ -27,10 +27,10 @@ function convert(stdout) {
 	var out = stdout[0].split('\n');
 	return {
 		email: out[0],
-		date: new Date(out[1])
+		date: out[1]
 	};
 }
 function setMeta(name, meta) {
-	this[name].date = this[name].date || meta.date;
+	this[name].date = this[name].date || meta.date && new Date(meta.date);
 	this[name].email = this[name].email || meta.email;
 }
