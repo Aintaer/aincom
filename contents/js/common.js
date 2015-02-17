@@ -2,9 +2,10 @@ require.config({
 	baseUrl: '/js',
 	deps: ['app/index'],
 	paths: {
-		typekit: "//use.typekit.net/dtz5muo",
 		hljs: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min",
-		moment: "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min"
+		moment: "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min",
+		three: "//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min",
+		typekit: "//use.typekit.net/dtz5muo"
 	}
 });
 
