@@ -151,7 +151,7 @@ class Boid {
 			steer.subVectors(this.position, target);
 			steer.multiplyScalar(0.5 / distance);
 
-			_acceleration.add(steer);
+			this._acceleration.add(steer);
 		}
 	}
 
@@ -269,6 +269,20 @@ function init(width, height) {
 		bird.phase = Math.floor(Math.random() * 62.83);
 		scene.add(bird);
 	}
+
+	document.addEventListener('mousemove', function onMouseMove(event) {
+		const vector = new THREE.Vector3(
+			event.clientX - width/2,
+			- event.clientY + height/2,
+			0
+		);
+
+		for (let boid of boids) {
+			vector.z = boid.position.z;
+			boid.repulse( vector );
+		}
+	}, false);
+
 }
 
 function draw() {
