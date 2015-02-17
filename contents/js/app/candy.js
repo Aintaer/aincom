@@ -1,7 +1,7 @@
 import "three";
 import module from "module";
 
-const masks = document.querySelectorAll('main article');
+const masks = document.querySelectorAll('.js-mask');
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.domElement.style.position = 'absolute';
 renderer.domElement.style.top = 0;
@@ -19,12 +19,13 @@ function load(name, req, done, config) {
 	}
 
 	function getElemCoords(el) {
+		// Transform to 0,0 as left bottom
 		return [el.offsetLeft, height - el.offsetTop - el.offsetHeight, el.offsetWidth, el.offsetHeight];
 	}
 
 	req([`${module.id}/${name}`], function(plugin) {
 		setSize();
-		renderer.enableScissorTest(true);
+		if (masks.length) renderer.enableScissorTest(true);
 
 		if (plugin.init) {
 			plugin.init(width, height);
@@ -37,11 +38,13 @@ function load(name, req, done, config) {
 				plugin.draw();
 			}
 
-			// Only draw the masked areas
+			// Only pain the masked areas
 			for (let mask of masks) {
 				renderer.setScissor.apply(renderer, getElemCoords(mask));
 				plugin.render(renderer);
 			}
+			// Otherwise, paint whole
+			if (!masks.length) plugin.render(renderer);
 		})();
 
 		done(plugin);
