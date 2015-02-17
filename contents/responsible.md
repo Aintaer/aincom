@@ -1,4 +1,5 @@
 ---
 template: plain.mustache
+scripts:
+ - app/responsible
 ---
-<script>require(['app/responsible']);</script>

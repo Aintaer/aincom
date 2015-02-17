@@ -1,14 +1,14 @@
 import "three";
 
 const scene = new THREE.Scene();
-let camera, cube;
+let camera, cube, light;
 
 function init(width, height) {
 	camera = new THREE.PerspectiveCamera(80, width/height, 1, 1000);
 	camera.position.z = 300;
 	scene.add(camera);
 
-	const light = new THREE.DirectionalLight(0x666666, 5);
+	light = new THREE.DirectionalLight(0x666666, 5);
 	light.position.z = 3;
 	scene.add(light);
 
