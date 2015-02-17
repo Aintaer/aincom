@@ -16,6 +16,7 @@ function load(name, req, done, config) {
 		width = window.innerWidth;
 		height = window.innerHeight;
 		renderer.setSize(width, height);
+		renderer.setPixelRatio(window.devicePixelRatio);
 	}
 
 	function getElemCoords(el) {
