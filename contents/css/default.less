@@ -84,6 +84,28 @@ article {
 	padding: 20px;
 }
 
+.bubble {
+	@arrow: 10px;
+	@kulr: lighten(@back, 10%);
+	padding: 8px;
+	position: relative;
+	margin-left: @arrow;
+	background: @kulr;
+	&::after {
+		content: '';
+		position: absolute;
+		border-width: @arrow @arrow @arrow 0;
+		border-style: solid;
+		border-color: transparent @kulr;
+		display: block;
+		width: 0;
+		z-index: 1;
+		margin-top: -@arrow;
+		left: -@arrow;
+		top: 50%;
+	}
+}
+
 .quicknav {
 	.vertical-align;
 	.border-box;
@@ -111,5 +133,17 @@ article {
 		&.right {
 			float:right;
 		}
+	}
+}
+
+.byline {
+	img {
+		.circle(40px);
+		vertical-align: middle;
+	}
+	time {
+		.font-size(12);
+		.bubble;
+		vertical-align: middle;
 	}
 }
