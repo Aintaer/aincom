@@ -16,7 +16,7 @@ function load(name, req, done, config) {
 		width = window.innerWidth;
 		height = window.innerHeight;
 		renderer.setSize(width, height);
-		renderer.setPixelRatio(window.devicePixelRatio);
+		//renderer.setPixelRatio(window.devicePixelRatio);
 	}
 
 	function getElemCoords(el) {
@@ -39,7 +39,7 @@ function load(name, req, done, config) {
 				plugin.draw();
 			}
 
-			// Only pain the masked areas
+			// Only paint the masked areas
 			for (let mask of masks) {
 				renderer.setScissor.apply(renderer, getElemCoords(mask));
 				plugin.render(renderer);
