@@ -1,23 +1,42 @@
 var nav = document.querySelector('nav'),
 underscore = document.createElement('div');
 underscore.className = "underscore";
+nav.appendChild(underscore);
 
-var positionUnderscore = function() {
-	var left = this.offsetLeft;
-	var width = this.offsetWidth;
+const positionUnderscore = function() {
+	let { offsetLeft: left, offsetWidth: width } = this;
 	underscore.style.left = `${left}px`;
 	underscore.style.width = `${width}px`;
 };
 
-for (let li of document.querySelectorAll('nav li')) {
-	li.addEventListener('click', positionUnderscore);
-}
+nav.addEventListener('click', function(event) {
+	const ident = event.target.closest('.ident');
+	if (!ident) return;
+
+	positionUnderscore.call(ident);
+});
 
 import async from 'nbd/util/async';
 
-nav.appendChild(underscore);
 async(positionUnderscore.bind(nav.querySelector('.ident')));
 
+/**
+ * CSS shenanigans
+ */
+const link = document.createElement('link');
+link.rel = "stylesheet";
+link.href = "/css/teengirl.css";
+window.teengirlmode = function() {
+	if (document.head.contains(link)) {
+		document.head.removeChild(link);
+	} else {
+		document.head.appendChild(link);
+	}
+};
+
+/**
+ * Syntax highlighting
+ */
 let codeblocks = document.querySelectorAll('pre code');
 if (codeblocks.length) {
 	require(['hljs'], function(hljs) {
@@ -27,6 +46,9 @@ if (codeblocks.length) {
 	});
 }
 
+/**
+ * datetime markup
+ */
 import moment from 'moment';
 
 for (let article of document.querySelectorAll('article')) {
