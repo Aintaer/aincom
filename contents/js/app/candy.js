@@ -32,11 +32,11 @@ function load(name, req, done, config) {
 			plugin.init(width, height);
 		}
 
-		(function animate() {
+		(function animate(elapsed) {
 			requestAnimationFrame(animate);
 
 			if (plugin.draw) {
-				plugin.draw();
+				plugin.draw(elapsed);
 			}
 
 			// Only paint the masked areas
