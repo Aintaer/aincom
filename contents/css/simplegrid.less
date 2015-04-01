@@ -22,12 +22,16 @@
 	min-width: 755px;
 	margin: 0 auto;
 	overflow: hidden;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
-.grid:after {
-	content: "";
-	display: table;
-	clear: both;
+
+.grid-small {
+	max-width: 900px;
 }
 
 .grid-pad {

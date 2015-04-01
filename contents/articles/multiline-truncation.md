@@ -17,7 +17,7 @@ peeve, when descenders get cut off or ascenders peek through.)
 [1]: http://html5hub.com/ellipse-my-text/
 [2]: http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
 
-### Much chagrin was had
+## Much chagrin was had
 
 Our solution accepted the reality that we're never going to have a perfect
 multi-line ellpsis, and focused on the bit we deemed important:
@@ -76,7 +76,7 @@ do {
 while (height > maxHeight);
 ```
 
-### Voila
+## Voila
 
 There we have it, JS aided multi-line truncated ellipses. Try saying that 5
 times fast. It's not a perfect solution, since it's a content-enforced

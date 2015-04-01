@@ -1,4 +1,4 @@
-Recursive Promise Chaining in JS
+Recursive Promise Chaining
 ===
 
 One of the problems I commonly have to deal with is asynchronous pagination.
