@@ -16,7 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
 	color: lighten(@highlight, 10%);
-	text-decoration: none;
+	.heading & {
+		text-decoration: none;
+	}
 	&:link {
 		.transition(color 100ms);
 	}
@@ -38,6 +40,7 @@ code {
 }
 
 pre {
+	font-size: 18px;
 	background-color: fadeout(ghostwhite, 10%);
 }
 
@@ -82,10 +85,6 @@ nav {
 
 article {
 	padding: 20px;
-
-	&.content {
-		font-size: 20px;
-	}
 }
 
 .bubble {
